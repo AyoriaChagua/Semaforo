@@ -1,0 +1,346 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    width: 100%;
+    min-height:100vh;
+    
+}
+
+
+h1{
+    color: rgba(47, 47, 47, 0.841) ;
+}
+.contenido-principal{
+    margin-top: 2rem;
+    
+}
+.area{
+    box-shadow: 0 1px 12px 1px #0000005c;
+    height: 100%;
+    border: 2px solid #1a9b00;
+}
+
+.cesped{
+    background: #66ff4b;
+    height: 10rem;
+    position: relative;
+    border: 2px solid rgba(62, 54, 54, 0.172);
+}
+
+.pista-centro{
+    background:#808080;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.pista-horizontal{
+    
+    background:#808080;
+    height: 6.5vw;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    min-height: 4.2rem;
+}
+
+.pista-vertical{
+    position: relative;
+    background:#808080;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.carril-derecha, .carril-izquierda{
+    height: 3vw;
+    min-height: 2rem;
+    position: relative;
+}
+
+#contenedor-vehiculos-v-arriba, #contenedor-vehiculos-v-abajo{
+    height: 100%;
+}
+
+#contenedor-vehiculos-h-d, #contenedor-vehiculos-h-i{
+    width: 100%;
+    height: 100%;
+}
+
+.linea-amarilla-v{
+    background: #e5ff00;
+    border: 2px solid rgba(216, 223, 77, 0.815);
+    width: 50%;
+    height: 10em;
+}
+
+.linea-amarilla-h{
+    height: 0.5vw;
+    background: #e5ff00;
+    border: 2px solid rgba(216, 223, 77, 0.815);
+    width: 100%;
+    min-height: 0.25rem;
+
+
+}
+
+.semaforo-vertical{
+    width: 40px;
+    border-radius: 100px;
+    display: grid;
+    place-items: center;
+    justify-content: center;
+    align-items: center;
+    background: #2c3e50;
+    padding: 5px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0.5rem;
+}
+
+.semaforo-horizontal{
+    width: 100px;
+    border-radius: 40px;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    align-items: center;
+    background: #2c3e50;
+    padding: 5px;
+    margin: 0.5rem;
+
+}
+
+#auto-hacia-abajo, #auto-hacia-arriba{
+    width: 80%;
+}
+
+.auto-vertical-abajo{
+    position: relative;
+    top: 1rem;
+    left: 0.3rem;
+}
+
+
+.auto-vertical-abajo, .auto-vertical-arriba{
+    width: 35%;
+    position: absolute;
+    bottom: 1rem;
+}
+
+
+#auto-hacia-arriba{
+    transform: scaleY(-1);
+}
+
+#auto-hacia-derecha{
+    transform: rotate(270deg);
+    height: 100%; 
+    position: absolute;  
+    left: 1rem;
+    z-index: 10000;
+}
+
+#auto-hacia-izquierda{
+    transform: rotate(90deg);
+    height: 100%;    
+    position: absolute;  
+    right: 1rem;
+    z-index: 100001;
+}
+
+.luces-circulo-vertical, .luces-circulo-horizontal{
+    display: block;
+    width: 22px; 
+    height: 22px;
+    border-radius: 50%;
+    margin: 5px;
+    background: rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.luces-circulo-vertical::after{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border-right: 2px solid rgba(255, 255, 255, 0.6);
+    top: 5%;
+}
+
+.luces-circulo-horizontal::after{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border-right: 2px solid rgba(255, 255, 255, 0.6);
+    top: 5%;
+}
+
+.arranque-hacia-abajo {
+    animation-name: moverAbajo;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    transform-origin: center bottom;
+    animation-timing-function: ease-in;
+}
+
+@keyframes moverAbajo{
+    from{
+        top: 10%;
+    }
+    to{
+        top: 255%;
+        visibility: hidden;
+    }
+}
+
+.arranque-hacia-arriba {
+    animation-name: moverArriba;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    transform-origin: center bottom;
+    animation-timing-function: ease-in;
+}
+
+
+@keyframes moverArriba{
+    from{
+        top: 57%;
+    }
+    to{
+        top: -160%;
+        visibility: hidden;
+    }
+    
+}
+
+
+.arranque-hacia-derecha {
+    animation-name: moverDerecha;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    transform-origin: center bottom;
+    animation-timing-function: ease-in;
+}
+
+@keyframes moverDerecha{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(280%);
+        visibility: hidden;
+
+    }
+}
+
+.arranque-hacia-izquierda {
+    animation-name: moverIzquierda;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    transform-origin: center bottom;
+    animation-timing-function: ease-in;
+}
+
+@keyframes moverIzquierda{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-280%);
+        visibility: hidden;
+    }
+}
+
+.red{
+    background: #c0392b;
+    box-shadow: 0 0 10px 1px #c0392b;
+}
+
+.yellow{
+    background: #f7fa26;
+    box-shadow: 0 0 10px 1px #f7fa26;
+}
+
+.green{
+    background: #6bf758;
+    box-shadow: 0 0 10px 1px #6bf758;
+}
+
+
+#form{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    border-radius:20px;
+    margin: 1em;
+}
+
+#vert{
+    padding: 0.5em;
+    margin: 0.5rem;
+    text-align: center;
+
+    background: rgb(255, 119, 115);
+    
+    border-top-left-radius:15px;
+    border-bottom-left-radius:15px ;
+    color: white;
+ 
+
+}
+#hori{
+    padding: 0.5em;
+    margin: 0.5rem;
+    text-align: center;
+    background: rgb(255, 119, 114);
+    border-top-right-radius:15px;
+    border-bottom-right-radius:15px ;
+    color: white;
+
+}
+.input-datos{
+    padding-left: 1rem;
+}
+
+#button-submit{
+    text-align: center;
+    border-radius: 15px;
+    border: 2px solid #000;
+    width: 5rem;
+    background: rgb(205,104,100);
+    background: linear-gradient(270deg, rgba(205,104,100,1) 0%, rgba(255,126,121,1) 51%, rgba(213,112,108,1) 100%);
+}
+.button-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+  
+input[type=number] { 
+    -moz-appearance:textfield; 
+}
+  
+
+input{
+    font-size: 8px;
+    padding:0.2rem 0.2rem ;
+    border-radius:20px;
+}

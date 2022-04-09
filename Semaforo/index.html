@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleGeneral.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="icon" href="img/code-slash.svg">
+    <title>Semáforo</title>
+</head>
+<body>
+    <nav class="navbar">
+        <img src="img/code-slash.svg" alt="" width="30" height="24" class="align-text-top">
+            <h1>
+                Semáforo Inteligente
+            </h1>
+        <img src="img/code-slash.svg" alt="" width="30" height="24" class="align-text-top">
+    </nav>
+    <div class="container contenido-principal">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 area">
+                <div class="row">                     
+                    <div class="col-5">
+                        <div class="cesped">
+                            <div class="container-semaforo">
+                                <div class="semaforo-vertical via-vertical">
+                                    <spam class="luces-circulo-vertical red" colorV= "red"></spam>
+                                    <spam class="luces-circulo-vertical " colorV="yellow"></spam>
+                                    <spam class="luces-circulo-vertical " colorV="green"></spam>
+                                </div>
+                            </div>  
+                        </div>  
+                    </div>
+                    <div class="col-2">
+                        <div class="pista-vertical">
+                            <div class="row">
+                                <div class="col-5">
+                                    <div id="contenedor-vehiculos-v-arriba">
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="linea-amarilla-v">
+                                    </div>
+                                </div>
+                                <div class="col-5">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-5">    
+                        <div class="cesped">
+
+                        </div>        
+                    </div>
+                </div> 
+                <div class="row">
+                    <div class="col-4">
+                        <div class="pista-horizontal">
+                            <div class="row">
+                                <div class="col carril-derecha">
+                                    <div id="contenedor-vehiculos-h-d">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <div class="linea-amarilla-h"></div>
+                                </div> 
+                            </div>
+                            <div class="row">
+                                <div class="col carril-derecha">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="pista-centro"> </div>
+                    </div>
+                    <div class="col-4 ">
+                        <div class="pista-horizontal">
+                            <div class="row">
+                                <div class="col carril-derecha">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="linea-amarilla-h"></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col carril-izquierda">
+                                    <div id="contenedor-vehiculos-h-i">
+                                                 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="row">
+                    <div class="col-5">
+                        <div class="cesped">
+                            
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="pista-vertical">
+                            <div class="row">
+                                <div class="col-5"></div>
+                                <div class="col-2">
+                                    <div class="linea-amarilla-v"></div>
+                                </div>
+
+                                <div class="col-5">
+                                    <div id="contenedor-vehiculos-v-abajo">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-5 ">
+                        <div class="cesped">
+                            <div class="container-semaforo">
+                                <div class="semaforo-horizontal via-horizontal ">
+                                    <spam class="luces-circulo-horizontal " colorH= "red"></spam>
+                                    <spam class="luces-circulo-horizontal " colorH= "yellow"></spam>
+                                    <spam class="luces-circulo-horizontal green" colorH= "green"></spam>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="row align-items-center">
+                    <form action="">
+                        <div class="row " id="form" >
+                            <div class="col" id="vert" >
+                                <div><label  for="text">Pista Vertical   </label> </div><br>
+                                <div ><p >Cantidad Autos:</p><input class="input-datos" type="number" id="cantidad-vertical" size="10" required="true"></div>
+                                <div ><p >Velocidad promedio en Km/h:</p><input class="input-datos" type="number" id="velocidad-vertical" size="10" required="true"></div>
+                                <div ><p >Numero de Personas:</p><input class="input-datos" type="number" id="personas-vertical" size="10" required="true"></div>
+                                <br>
+                                
+                            </div>
+        
+                            <div class="col " id="hori" >
+                                <div><label for="text">Pista Horizontal  </label></div> <br>
+                                <div ><p >Cantidad Autos:</p><input  class="input-datos" id="cantidad-horizontal" type="number" size="10" required="true"> </div>
+                                <div ><p >Velocidad promedio en Km/h:</p><input  class="input-datos" id="velocidad-horizontal"type="number" size="10" required="true"></div>
+                                <div ><p >Numero de Personas:</p><input class="input-datos" id="personas-horizontal" type="number"  size="10" required="true"></div>
+                                <br><div>    
+                            </div>
+                            
+                        </div>
+                        </div>
+                    </form>
+
+                    <div class="button-container">
+                        <input type="submit" class="btn btn-light mb-3" id="button-submit" onclick="getValues()">
+                    </div>
+            </div>
+        </div> 
+    </div>
+    
+    <script src="js/scriptSemaforo.js"></script>
+    <script src="js/bootstrap.js"></script>
+</body>
+</html>
